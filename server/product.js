@@ -11,7 +11,7 @@ export default class Product{
     this.imageUrlFront = imageUrlFront
     this.imageUrlBack = imageUrlBack
     this.price = price
-    this.priceString = `$${toString(price)}`
+    this.priceString = '$' + price.toFixed(2)
     this.newItem = newItem
     this.color = color
     
