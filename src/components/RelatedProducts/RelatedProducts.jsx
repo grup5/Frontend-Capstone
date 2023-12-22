@@ -1,4 +1,14 @@
-
 export default function RelatedProducts(){
-  return <h1>Hello World</h1>
+
+  
+
+  return (
+    <div>
+      <img src="/img/relatedProductsImages/caterpiller-front.webp" alt="Logo" />
+    </div>
+    )
+}
+
+function CarouselImage(){
+
 }
