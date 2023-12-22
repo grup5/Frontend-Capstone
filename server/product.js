@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 //Name is the product full name
 //The imageUrlFront is the basic front image url: like hat.jpg or sweater.png
 //The imageUrlBack is the url for the back image, aka the image which the carousel changes to when hovered over
@@ -7,6 +8,7 @@
 //The color is the color of the price and item name pop up when hover over. The color can be (red, orange, yellow, lightBlue, darkBlue)
 export default class Product{
   constructor(name,imageUrlFront,imageUrlBack,price,newItem,color){
+    this.id = uuidv4();
     this.name = name
     this.imageUrlFront = imageUrlFront
     this.imageUrlBack = imageUrlBack

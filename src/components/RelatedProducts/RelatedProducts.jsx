@@ -8,7 +8,7 @@ import './relatedProducts.css';
 export default function RelatedProducts() {
   let apiUrl;
   const [products, setProducts] = useState([]);
-
+  const [hoveredProductId, setHoveredProductId] = useState(null)
   if (process.env.NODE_ENV === 'production') {
     apiUrl = '/api/images/related'; // Use the production API URL
   } else {
@@ -33,6 +33,9 @@ export default function RelatedProducts() {
     slidesToShow: 5, // Maximum number of slides to show
     slidesToScroll: 1,
     arrows: true,
+    autoplay: true,
+    speed: 1000,
+    autoplaySpeed: 5000,
     responsive: [
       {
         breakpoint: 700,
@@ -54,8 +57,16 @@ export default function RelatedProducts() {
     <div className="carousel-container">
       <Slider {...settings}>
         {products.map((product) => (
-          <div key={product.id} className="related-product">
-            <img src={product.imageUrlFront} alt={product.name} />
+          <div
+            key={product.id}
+            className="related-product"
+            onMouseEnter={() => setHoveredProductId(product.id)}
+            onMouseLeave={() => setHoveredProductId(null)}
+          >
+            <img
+              src={hoveredProductId === product.id ? product.imageUrlBack : product.imageUrlFront}
+              alt={product.name}
+            />
           </div>
         ))}
       </Slider>

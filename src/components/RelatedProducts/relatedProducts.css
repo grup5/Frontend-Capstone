@@ -13,3 +13,8 @@
 .slick-list {
   margin: 0 .8em;
 }
+
+.slick-prev:before,
+.slick-next:before {
+  color: #1b1b1b
+}
