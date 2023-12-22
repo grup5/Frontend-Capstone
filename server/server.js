@@ -3,7 +3,8 @@ import dotenv from "dotenv"
 import { RelatedProduct, RecommenedProduct } from "./product.js"
 const app = express()
 const port = process.env.PORT || 3000
-
+//See the documentation in the product.js file for how to properly use the RelatedProduct and RecommenedProduct classes
+//These are used to create object to display the proper information for the carousels.
 //Related Products
 const caterpillerBack = new RelatedProduct("THE CATERPILLER HAT", 'caterpiller-front.webp','caterpiller-back.webp',30.00,true,"lightBlue");
 const coolBeanieRelated = new RelatedProduct("THE COOL BEANIE 2.0", 'cool-beanie-front.webp','cool-beanie-back.webp',23.00,true,"darkBlue");
@@ -26,7 +27,19 @@ console.log(RecommenedProduct.RecommenedProducts)
 console.log(RelatedProduct.RelatedProducts)
 //Get all route for the related images
 app.get('/api/images/related',(req,res)=>{
-
+  try{
+    res.status(200).json(RelatedProduct.RelatedProducts)
+  }catch{
+    res.status(500).json({error:"Internal Error"})
+  }
+})
+//Get all route for the recommened images
+app.get('/api/images/recommened',(req,res)=>{
+  try{
+    res.status(200).json(RecommenedProduct.RecommenedProducts)
+  }catch{
+    res.status(500).json({error:"Internal Error"})
+  }
 })
 
 app.use(express.json())
