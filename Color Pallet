@@ -1,6 +1,13 @@
+Body Background: #fff
+Body color/text: #333;
 Top Nav: #1b1b1b  hsl(0,0%,11%) rgb(27,27,27)
 Lower Part of Top Nav: #1b1b1b  hsl(0,0%,11%) rgb(27,27,27)
 Icon menu top right of Nav Icons: #f09fde  hsl(313,73%,78%) rgb(240,159,222) / #f1f9f4  hsl(143,40%,96%)rgb(241,249,244)
+Lower Nav Bar pressed color: #eb7556  hsl(12,79%,63%)rgb(235,117,86)
+Lower Nav Bar default text color: #ffffff
+Product Title: #111111
+Price: #6a6a6a
+Speech Bubble: BackgroundColor: #ffffff, #000000
 
 AED د.إ
 AFN ؋
