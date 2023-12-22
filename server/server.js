@@ -1,8 +1,12 @@
 import express from "express"
 import dotenv from "dotenv"
+import cors from "cors"
 import { RelatedProduct, RecommenedProduct } from "./product.js"
 const app = express()
 const port = process.env.PORT || 3000
+
+app.use(cors());
+app.use(express.json())
 //See the documentation in the product.js file for how to properly use the RelatedProduct and RecommenedProduct classes
 //These are used to create object to display the proper information for the carousels.
 //Related Products
@@ -23,8 +27,6 @@ const rubixHoodie = new RecommenedProduct('THE RUBIX HOODIE','rubix-front.webp',
 const slide = new RecommenedProduct('THE COOL SLIDES','slide-front.webp','slide-back.webp',37.00,true,'lightBlue','shoes',['6','7','8','9','10','11']);
 
 
-console.log(RecommenedProduct.RecommenedProducts)
-console.log(RelatedProduct.RelatedProducts)
 //Get all route for the related images
 app.get('/api/images/related',(req,res)=>{
   try{
@@ -42,6 +44,5 @@ app.get('/api/images/recommened',(req,res)=>{
   }
 })
 
-app.use(express.json())
 app.listen(port,()=>{console.log("Server Running on Port:",port)})
 

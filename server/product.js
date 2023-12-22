@@ -20,7 +20,7 @@ export default class Product{
 //When a product is created it automatically is added to the RelatedProducts array.
 export class RelatedProduct extends Product{
   static RelatedProducts = []
-  constructor(name,imageUrlFront,imageUrlBack,price,newItem,color,baseURL='public/img/relatedProductsImages'){
+  constructor(name,imageUrlFront,imageUrlBack,price,newItem,color,baseURL='/img/relatedProductsImages'){
     super(name,imageUrlFront,imageUrlBack,price,newItem,color)
     this.baseURL = baseURL
     RelatedProduct.RelatedProducts.push(this)
