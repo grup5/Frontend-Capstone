@@ -1,32 +1,64 @@
-import {useState,useEffect} from 'react'
-import axios from 'axios'
-export default function RelatedProducts(){
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import './relatedProducts.css';
 
+export default function RelatedProducts() {
   let apiUrl;
-  const [product,setProduct] = useState([])
+  const [products, setProducts] = useState([]);
+
   if (process.env.NODE_ENV === 'production') {
-    // Use the production API URL
-    apiUrl = '/api/images/related';
+    apiUrl = '/api/images/related'; // Use the production API URL
   } else {
-    // Use the development API URL
-    apiUrl = 'http://localhost:3000/api/images/related';
+    apiUrl = 'http://localhost:3000/api/images/related'; // Use the development API URL
   }
-  useEffect(()=>{
-    async function getProducts(){
-      const res = await axios.get(apiUrl)
-      setProduct(res.data)
-      await console.log(product)
+
+  useEffect(() => {
+    async function getProducts() {
+      try {
+        const res = await axios.get(apiUrl);
+        setProducts(res.data);
+      } catch (error) {
+        console.error('Error fetching products:', error);
+      }
     }
-    getProducts()
-  },[])
+    getProducts();
+  }, []);
+
+  const settings = {
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5, // Maximum number of slides to show
+    slidesToScroll: 1,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2,
+          centerMode: false, // Disable center mode on smaller screens
+        },
+      },
+    ],
+  };
 
   return (
-    <div>
-
+    <div className="carousel-container">
+      <Slider {...settings}>
+        {products.map((product) => (
+          <div key={product.id} className="related-product">
+            <img src={product.imageUrlFront} alt={product.name} />
+          </div>
+        ))}
+      </Slider>
     </div>
-    )
-}
-
-function CarouselImage(){
-
+  );
 }

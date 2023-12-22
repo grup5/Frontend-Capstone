@@ -1,0 +1,15 @@
+.carousel-container{
+  padding: 0 4%;
+}
+
+.related-product img {
+  width: 100%; /* Make the image fill the slide container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.slick-slide > div {
+  margin: 0 .8em;
+}
+.slick-list {
+  margin: 0 .8em;
+}
