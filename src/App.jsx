@@ -1,5 +1,5 @@
-import Footer from "./components/Footer";
-import StickyFooter from "./components/StickyFooter";
+import Footer from "./components/Footer/Footer";
+import StickyFooter from "./components/Footer/StickyFooter";
 
 function App() {
   
@@ -11,4 +11,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
