@@ -1,3 +1,7 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
 .carousel-container{
   padding: 0 4%;
 }
@@ -17,4 +21,32 @@
 .slick-prev:before,
 .slick-next:before {
   color: #1b1b1b
+}
+
+.new-tag{
+  font-family: "Fjalla One";
+  font-size: small;
+  position: absolute;
+  background-color: #262626;
+  color: white;
+  margin: .2em;
+  padding-left: .8em;
+  padding-right: .8em;
+  padding-top: .1em;
+  padding-bottom: .1em;
+}
+
+.detail-tag{
+  font-family: "Fjalla One";
+  position: absolute;
+  z-index: 1;
+  color: white;
+  top: 30vh;
+  transform: translate(-5px);
+  padding: .4em;
+  text-align: center;
+}
+
+.detail-tag p{
+  font-size: xx-small
 }
