@@ -65,12 +65,34 @@ export default function RelatedProducts() {
             onMouseEnter={() => setHoveredProductId(product.id)}
             onMouseLeave={() => setHoveredProductId(null)}
           >
+            <div className='pop-up'>
             {
-              hoveredProductId === product.id&&<div className='new-tag'>NEW</div>
+              hoveredProductId === product.id&&
+                <>
+                <div className='new-tag'>NEW</div>
+                <div style={{backgroundColor:product.color}}className='detail-tagRec'>
+                  <h6>{product.name}</h6>
+                  <p>{product.priceString}</p>
+                </div>
+                </>
+              
             }
             {
-              hoveredProductId === product.id&&<div style={{backgroundColor:product.color}}className='detail-tag'><h6>{product.name}</h6><p>{product.priceString}</p></div>
+              hoveredProductId !== product.id &&
+              <div className='sizes'>
+                {
+                  product.sizes&&
+                  <div className='sizes'>
+                    {
+                  product.sizes.map((size)=>(
+                    <div className='size'>{size}</div>
+                  ))
+                    }
+                  </div>
+                }
+              </div>
             }
+            </div>
             <img
               src={hoveredProductId === product.id ? product.imageUrlBack : product.imageUrlFront}
               alt={product.name}
