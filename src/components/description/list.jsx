@@ -5,7 +5,7 @@ const List = ({parsedData}) => {
             Object.keys(item).map(key => {
                 if (key.includes('com')) {
                     return (
-                        <li key={`${index}_${key}`}>
+                        <li key={`${index}_${key}`} style={{fontFamily: 'Fjalla One, sans-serif'}}>
                             {item[key]}
                         </li>
                     );
