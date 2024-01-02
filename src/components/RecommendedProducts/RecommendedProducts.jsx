@@ -3,16 +3,16 @@ import axios from 'axios';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './relatedProducts.css';
+import './recommendedProducts.css';
 
 export default function RelatedProducts() {
   let apiUrl;
   const [products, setProducts] = useState([]);
   const [hoveredProductId, setHoveredProductId] = useState(null)
   if (process.env.NODE_ENV === 'production') {
-    apiUrl = '/api/images/related'; // Use the production API URL
+    apiUrl = '/api/images/recommened'; // Use the production API URL
   } else {
-    apiUrl = 'http://localhost:3000/api/images/related'; // Use the development API URL
+    apiUrl = 'http://localhost:3000/api/images/recommened'; // Use the development API URL
   }
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function RelatedProducts() {
   const settings = {
     infinite: true,
     speed: 500,
-    slidesToShow: 5, // Maximum number of slides to show
+    slidesToShow: 7, // Maximum number of slides to show
     slidesToScroll: 1,
     arrows: true,
     autoplay: true,
@@ -40,7 +40,7 @@ export default function RelatedProducts() {
       {
         breakpoint: 700,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 5,
         },
       },
       {
@@ -54,8 +54,9 @@ export default function RelatedProducts() {
   };
 
   return (
+
     <div className="carousel-container">
-      <h5>Related Products</h5>
+      <h5>Recommended Products</h5>
       <Slider {...settings}>
         {products.map((product) => (
           <div
@@ -64,16 +65,34 @@ export default function RelatedProducts() {
             onMouseEnter={() => setHoveredProductId(product.id)}
             onMouseLeave={() => setHoveredProductId(null)}
           >
+            <div className='pop-up'>
             {
               hoveredProductId === product.id&&
-              <div className='pop-up'>
+                <>
                 <div className='new-tag'>NEW</div>
                 <div style={{backgroundColor:product.color}}className='detail-tagRec'>
                   <h6>{product.name}</h6>
                   <p>{product.priceString}</p>
                 </div>
+                </>
+              
+            }
+            {
+              hoveredProductId !== product.id &&
+              <div className='sizes'>
+                {
+                  product.sizes&&
+                  <div className='sizes'>
+                    {
+                  product.sizes.map((size)=>(
+                    <div className='size'>{size}</div>
+                  ))
+                    }
+                  </div>
+                }
               </div>
             }
+            </div>
             <img
               src={hoveredProductId === product.id ? product.imageUrlBack : product.imageUrlFront}
               alt={product.name}
