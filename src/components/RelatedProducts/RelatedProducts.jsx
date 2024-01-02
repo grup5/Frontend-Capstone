@@ -55,6 +55,7 @@ export default function RelatedProducts() {
 
   return (
     <div className="carousel-container">
+      <h5>Related Products</h5>
       <Slider {...settings}>
         {products.map((product) => (
           <div
@@ -64,10 +65,14 @@ export default function RelatedProducts() {
             onMouseLeave={() => setHoveredProductId(null)}
           >
             {
-              hoveredProductId === product.id&&<div className='new-tag'>NEW</div>
-            }
-            {
-              hoveredProductId === product.id&&<div style={{backgroundColor:product.color}}className='detail-tag'><h6>{product.name}</h6><p>{product.priceString}</p></div>
+              hoveredProductId === product.id&&
+              <div className='pop-up'>
+                <div className='new-tag'>NEW</div>
+                <div style={{backgroundColor:product.color}}className='detail-tagRec'>
+                  <h6>{product.name}</h6>
+                  <p>{product.priceString}</p>
+                </div>
+              </div>
             }
             <img
               src={hoveredProductId === product.id ? product.imageUrlBack : product.imageUrlFront}

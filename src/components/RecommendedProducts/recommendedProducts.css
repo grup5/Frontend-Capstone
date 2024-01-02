@@ -1,0 +1,55 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+.carousel-container{
+  padding: 0 4%;
+  font-family: "Fjalla One";
+  color:#1b1b1b;
+}
+
+.related-product img {
+  width: 100%; /* Make the image fill the slide container */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.slick-slide > div {
+  margin: 0 .8em;
+}
+.slick-list {
+  margin: 0 .8em;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #1b1b1b
+}
+
+/* .new-tag{
+  font-family: "Fjalla One";
+  font-size: small;
+  position: absolute;
+  background-color: #262626;
+  color: white;
+  margin: .2em;
+  padding-left: .8em;
+  padding-right: .8em;
+  padding-top: .1em;
+  padding-bottom: .1em;
+} */
+
+/* .detail-tag{
+  font-family: "Fjalla One";
+  position: absolute;
+  z-index: 1;
+  color: white;
+  max-width: 5em;
+  align-self: center;
+  transform: translate(-5px,100%);
+  padding: .4em;
+  text-align: center;
+}
+
+.detail-tag p{
+  font-size: xx-small
+} */
