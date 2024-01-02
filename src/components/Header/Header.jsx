@@ -3,7 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faShoppingBag} from '@fortawesome/free-solid-svg-icons';
 import {faUser, faHeart } from '@fortawesome/free-regular-svg-icons';
 
-function Header() {
+function Header({onToggleCurrency}) {
+    function handleToggle(e) {
+        e.preventDefault()
+        onToggleCurrency()
+    }
     return (
         <div className="header-container">
             <div className='left-header'>
@@ -17,7 +21,7 @@ function Header() {
                         <a className='icon' href="">
                         <FontAwesomeIcon icon={faMagnifyingGlass}/>
                         </a>
-                        <a className='icon' href="">USD</a>
+                        <a className='icon' href="" onClick={handleToggle}>USD</a>
                         <a className='icon' href="">
                         <FontAwesomeIcon icon={faUser}/>
                         </a>

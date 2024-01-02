@@ -8,7 +8,6 @@ import NavBar from './components/Header/NavBar.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Header />
     <NavBar />
   </React.StrictMode>,
 )
