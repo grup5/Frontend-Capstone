@@ -3,7 +3,8 @@
 const Bubble = ({parsedData}) => {
     console.log()
     return (
-        <div style={{
+        <div id='speechbubble'
+        style={{
             position: 'relative',
             border: '2px solid black',
             borderRadius: '50%',
@@ -16,7 +17,7 @@ const Bubble = ({parsedData}) => {
             maxWidth: '750px',
             fontWeight: 'bold',
             fontFamily: 'Fjalla One, sans-serif',
-            fontSize: '24px',
+            fontSize: '30px',
             letterSpacing: '0.04em'
         }}>
         Four Colours!!!

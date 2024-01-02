@@ -9,7 +9,6 @@ const SizeDisplay = ({size, parsedData}) => {
             marginBottom: '2px',
             marginLeft: '50px',
             color: '#333',
-            opacity: '90%',
             fontSize: '15px',
             letterSpacing: '0.02em'
         }}>

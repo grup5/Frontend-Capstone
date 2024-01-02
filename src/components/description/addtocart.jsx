@@ -13,8 +13,8 @@ const AddToCart = () => {
             textAlign:'center',
             cursor:'pointer',
             fontWeight:'400',
-            fontSize:'13px',
-            borderRadius: '6px'
+            fontSize:'15px',
+            borderRadius: '6px',
         }}
         >ADD TO CART
         </button>

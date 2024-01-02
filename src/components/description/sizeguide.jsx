@@ -12,7 +12,7 @@ const SizeGuide = ({size, parsedData}) => {
             marginTop: '15px',
             marginBottom: '15px',
             borderBottom: '1px solid #333',
-            fontSize: '24px',
+            fontSize: '28px',
             fontWeight: '600',
             color: '#333'
         }}>SIZE GUIDE</div>
