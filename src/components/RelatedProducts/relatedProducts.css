@@ -37,8 +37,8 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: 100%; /* Align items to the top of the container */
-
+  height: 100%;
+  width: 100%;
 }
 .pop-up > :first-child {
   margin-bottom: 20px; /* Add margin to separate from the second item */

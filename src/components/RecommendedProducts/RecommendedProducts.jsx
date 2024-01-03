@@ -7,6 +7,7 @@ import './recommendedProducts.css';
 
 export default function RelatedProducts() {
   let apiUrl;
+
   const [products, setProducts] = useState([]);
   const [hoveredProductId, setHoveredProductId] = useState(null)
   if (process.env.NODE_ENV === 'production') {
@@ -27,6 +28,37 @@ export default function RelatedProducts() {
     getProducts();
   }, []);
 
+  const clothingSizes = ["XS","S","M","L","XL","2XL","3XL"]
+  const shoeSizes = ["6","7","8","9","10","11","12"]
+
+  function checkSizes(product) {
+    if (product.sizeType === "shoes") {
+      return shoeSizes.map((size) =>
+        product.sizes.includes(size) ? (
+          <div key={size} className="size">
+            {size}
+          </div>
+        ) : (
+          <div key={size} className="size faded-size">
+            {size}
+          </div>
+        )
+      );
+    } else if (product.sizeType === "clothing") {
+      return clothingSizes.map((size) =>
+        product.sizes.includes(size) ? (
+          <div key={size} className="size">
+            {size}
+          </div>
+        ) : (
+          <div key={size} className="size faded-size">
+            {size}
+          </div>
+        )
+      );
+    }
+    return null; // Return null if product sizeType is neither "shoes" nor "clothing"
+  }
   const settings = {
     infinite: true,
     speed: 500,
@@ -77,25 +109,23 @@ export default function RelatedProducts() {
                 </>
               
             }
+            </div>
+
             {
               hoveredProductId !== product.id &&
-              <div className='sizes'>
-                {
+
                   product.sizes&&
                   <div className='sizes'>
                     {
-                  product.sizes.map((size)=>(
-                    <div className='size'>{size}</div>
-                  ))
+                      checkSizes(product)
                     }
                   </div>
-                }
-              </div>
+
             }
-            </div>
             <img
               src={hoveredProductId === product.id ? product.imageUrlBack : product.imageUrlFront}
               alt={product.name}
+              className={hoveredProductId === product.id ? "image-transition hovered-image" : "image-transition"}
             />
           </div>
         ))}
