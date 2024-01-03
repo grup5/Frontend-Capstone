@@ -1,13 +1,4 @@
-body {
-    font-family: Fjalla One,Arial,Tahoma,Verdana,sans-serif;
-    background-color: #fff;
-    color: #333;
-    font-size: 15px;
-    line-height: 1.4;
-    margin: 0;
-    padding: 0;
-}
-
+/* Overall Header container styles */
 .header-container {
     position: relative;
     z-index: 3;
@@ -17,17 +8,14 @@ body {
     align-items: center;
     justify-content: space-between;
 }
-
+/* Left Header styles */
 .left-header {
     margin: 0;
     padding-right: 200px;
 }
 
 
-#icons-container {
-    justify-content: flex-end;
-}
-
+/* Logo section of the header */
 #middle-header {
     margin: 0;
     min-width: 170px;
@@ -47,6 +35,10 @@ body {
     object-fit: fill;
     z-index: 1;
 }
+/* All styles for the icon container in the right portion of the header */
+#icons-container {
+    justify-content: flex-end;
+}
 
 #icons-container {
     display: flex;
@@ -59,15 +51,16 @@ body {
     padding-right: 21px;
     color: #f8abff;
     text-decoration: none;
+    font-family: 'Fjalla One', sans-serif;
 }
-
+/* Number above the the shopping cart */
 #cart-count {
     position: relative;
     top: -13px;
     right: -4px;
     color: white;
 }
-
+/* All the currency dropdown styles and transitions to show/hide */
 .currency-dropdown {
   background-color: #fff;
   position: absolute;

@@ -1,11 +1,9 @@
 import { faChevronDown} from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect } from 'react';
 import Header from './Header';
-import NavBar2 from './NavBar2';
 import './navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-function NavBar() {
-    // Array holding all currency values
+function NavBar2() {
     const currencies = [
         'AED د.إ',
         'AFN ؋',
@@ -90,20 +88,21 @@ function NavBar() {
         'RSD РСД',
         'RWF FRw'
 ]
-// UseState for the currency and stickyHeader visibility
+
     const [isCurrencyVisible, setCurrencyVisible] = useState(false);
-    const [showNavBar2, setShowNavBar2] = useState(false)
-// function for the currency dropdown
+    const [isStickyHeader, setStickyHeader] = useState(false)
+
     const toggleCurrencyDropdown = () => {
         setCurrencyVisible(!isCurrencyVisible);
         console.log('working')
     };
-// useEffect to handle when user scrolls past the header show the NavBar2 component
+
     useEffect(() => {
         const handleScroll = () => {
             const offset = window.scrollY;
+            const threshold = 150;
 
-            setShowNavBar2(offset > 150);
+            setStickyHeader(offset > threshold);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -115,18 +114,9 @@ function NavBar() {
 
     return (
         <>
-        {/* conditional checks if useEffect set NavBar2 if it did show the stickyHeader if not display the regular header */}
-        {showNavBar2 ? (
-            <NavBar2 />
-        ) : (
-            // Full Header container
-            <div id='fullheader-container'>
-                {/* Header component */}
+        <div id='fullheader-container2'>
         <Header onToggleCurrency={toggleCurrencyDropdown}/>
-        {/* NavBar section */}
         <div id="navbar">
-            {/* unordered lists to show the categories on navbar */}
-            {/* list items with down arrow in clude a dropdown menu */}
             <ul>
                 <li className='navbar-item'>
                     TOPS <FontAwesomeIcon icon= {faChevronDown}/>
@@ -173,7 +163,6 @@ function NavBar() {
                     </div></li>
                 <li className='navbar-item'>NEW IN</li>
             </ul>
-            {/* currency menu includes a map that generates the currency dropdown menu when currency icon in Header is clicked.*/}
             <div className={`currency-dropdown ${isCurrencyVisible ? 'visible' : 'hidden'}`}>
                 <p>Select a Language</p>
                 <div className='currency-container'>
@@ -184,9 +173,8 @@ function NavBar() {
             </div>
         </div>
 </div>
-)}
 </>
 )
 }
 
-export default NavBar
+export default NavBar2
