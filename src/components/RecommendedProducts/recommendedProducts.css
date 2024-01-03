@@ -18,13 +18,26 @@
 }
 
 
+.hovered-image {
+  opacity: 0;
+}
 
-.related-product img {
+.image-transition {
   width: 100%; /* Make the image fill the slide container */
   height: auto; /* Maintain aspect ratio */
-  transition: .3s ease;
-  display: flex;
+  opacity: 1; /* Set default opacity to 0 */
+  transition: opacity 0.3s ease; /* Transition for opacity */
 }
+
+.related-product:hover .image-transition {
+  opacity: 0; /* Set opacity to 0 when not hovered */
+}
+
+.related-product:hover .hovered-image {
+  opacity: 1; /* Set opacity to 1 when hovered */
+}
+
+
 
 .slick-slide > div {
   margin: 0 .8em;

@@ -125,6 +125,7 @@ export default function RelatedProducts() {
             <img
               src={hoveredProductId === product.id ? product.imageUrlBack : product.imageUrlFront}
               alt={product.name}
+              className={hoveredProductId === product.id ? "image-transition hovered-image" : "image-transition"}
             />
           </div>
         ))}
