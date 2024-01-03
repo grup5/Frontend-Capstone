@@ -125,11 +125,12 @@
   .bottom-footer {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-
+    align-items: top;
+    padding-top: 13px;
     background-color: #111111;
     border-top: 1px solid #333;
     color: #fff;
+    height: 125px;
     font-size: 13px;
   }
   
@@ -149,6 +150,8 @@
     padding-left: 10px;
     text-align: right;
     padding-right: 50px;
+    margin-right: -350px;
+
   }
 
   .payment-list__item {
