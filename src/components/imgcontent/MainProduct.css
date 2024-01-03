@@ -17,7 +17,7 @@
 }
 .main-content{
     display: flex;
-    width: 100%;
+    width: 80%;
     height: 100%;
     object-fit: contain;
 }
@@ -33,7 +33,6 @@
     display: flex;
     opacity: 50%;
     height: 20%;
-    min-width: 100%;
     object-fit: contain;
     padding-bottom: 8%;
 }
@@ -52,6 +51,7 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
+  object-fit: contain;
 }
 
 .large-image:hover img {
@@ -62,16 +62,17 @@
  
 }
 
-@media (max-width: 1000px ) {
+@media (max-width: 1100px ) {
   .image-gallery {
+    display: flex;
     flex-direction: column;
-    height: 75vh;
+    height: auto;
   }
   .large-image {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 75%;
+    height: auto;
     width: 100%;
     max-width: 100%;
     margin-left: 1vw;
@@ -79,6 +80,7 @@
 
   .sidebar {
     order: 2;
+    display: flex;
     flex-direction: row;
     height: 20%;
     padding-top: 2%;
@@ -87,11 +89,12 @@
     display: flex;
     opacity: 50%;
     height: auto;
+    width: auto;
     object-fit: contain;
-    max-width: 100%;
   }
   .thumbnail {
     height: auto;
+    width: auto;
   }
 
   .main-content{
