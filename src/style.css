@@ -1,0 +1,4 @@
+.bodyclass{
+    display: flex;
+    flex-direction: row;
+}
