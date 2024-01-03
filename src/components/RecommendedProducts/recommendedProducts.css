@@ -37,13 +37,17 @@
 .slick-next:before {
   color: #1b1b1b
 }
+
+.related-product{
+  position: relative;
+}
 .pop-up{
   position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   height: 100%; /* Align items to the top of the container */
-
+  width: 100%;
 }
 
 .pop-up:hover{
@@ -66,7 +70,7 @@
   padding-right: .8em;
   padding-top: .1em;
   padding-bottom: .1em;
-  max-width: 80%;
+  max-width: 50%;
   margin-bottom: 100%;
 }
 @keyframes slideInFromLeft {
@@ -94,15 +98,16 @@
 .sizes{
   display: flex;
   flex-wrap: wrap;
-  max-width: 80%;
-  align-self: flex-end;
-  justify-self: flex-end; /* Adjust the font size to fit the box */
+  max-width: 100%;
+  height: 100%;
+  align-content: flex-end; /* Adjust the font size to fit the box */
 }
 
 .size {
   border: 1px solid black;
-  width: 3em;
-  height: 3em;
+  width: 2em;
+  height: 2em;
   padding: .3em;
+  margin: .3em;
   font-size: 0.5em;
 }
