@@ -1,0 +1,162 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'Fjalla One', Arial, Tahoma, Verdana, sans-serif;
+    font-size: 14px;
+}
+  
+.footer {
+    margin-top: auto;
+    background-color: #f5f5f5;
+    padding: 10px;
+    text-align: center;
+}
+  
+.container {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+}
+  
+.left-column,
+.right-column {
+    flex: 1;
+    flex-grow: 1;
+}
+
+.help-section h4,
+.help-section p {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 14px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    margin-top: 15px;
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+.help-section a {
+    text-decoration: none;
+}
+
+.help-section a:hover,
+.help-section a:focus {
+    color: #555;
+    text-decoration: underline;
+}
+  
+.middle-column {
+    flex: 2;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsletter {
+    color: #000;
+    font-size: 14px;
+}
+
+.newsletter-text {
+    color: #000;
+    font-size: 13px;
+    text-align: center!important;
+    font-weight: 100;
+}
+
+.subscribe-area {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.subscribe-bar {
+    flex-grow: 2;
+    width: 100%;
+    max-width: 475px;
+    padding: 10px;
+    border: 5px;
+    border-radius: 6px;
+    border-color: #888;
+    color: #888;
+    font-family: 'Fjalla One', Arial, Tahoma, Verdana, sans-serif;
+    font-size: 14px;
+}
+
+.subscribe-btn {
+    padding: 11px 13px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 10px;
+    cursor: pointer;
+    font-family: 'Fjalla One', Arial, Tahoma, Verdana, sans-serif;
+}
+
+.subscribe-btn:hover {
+    background-color: #333;
+}
+
+.social-media {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .social-media i {
+    font-size: 13px;
+    cursor: pointer;
+  }
+
+  .social-media i:hover {
+    color: #555;
+  }
+
+  .bottom-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #111111;
+    border-top: 1px solid #333;
+    color: #fff;
+    font-size: 13px;
+  }
+  
+  .left-section,
+  .right-section {
+    flex: 1;
+    padding: 0px;
+    margin-left: 50px;
+  }
+  
+  .left-section {
+    padding-right: 10px;
+    text-align: left;
+  }
+  
+  .right-section {
+    padding-left: 10px;
+    text-align: right;
+    padding-right: 50px;
+  }
+
+  .payment-list__item {
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 12px;
+  }
