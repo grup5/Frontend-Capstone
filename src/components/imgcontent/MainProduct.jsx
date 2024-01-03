@@ -19,7 +19,7 @@ const MainProduct = ({ images }) => {
   };
 
   const handleMouseEnter = () => {
-    setZoomLevel(2);
+    setZoomLevel(1.5);
   };
 
   const handleMouseLeave = () => {
