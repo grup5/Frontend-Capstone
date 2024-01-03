@@ -38,7 +38,7 @@ export class RelatedProduct extends Product{
 // rubixHoodie = new RecommenedProduct('The Rubix Hoodie','rubix-front.webp','rubix-front.webp',60.00,true,'red','clothing',['XS','S','M','L','XL','2XL','3XL'] )
 export class RecommenedProduct extends Product{
   static RecommenedProducts = []
-  constructor(name,imageUrlFront,imageUrlBack,price,newItem,color,sizeType,sizes,baseURL='public/img/recommendedProductsImages'){
+  constructor(name,imageUrlFront,imageUrlBack,price,newItem,color,sizeType,sizes,baseURL='/img/recommendedProductsImages'){
     super(name,imageUrlFront,imageUrlBack,price,newItem,color)
     this.sizeType = sizeType
     this.sizes = sizes
