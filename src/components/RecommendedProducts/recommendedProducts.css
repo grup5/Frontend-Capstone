@@ -46,7 +46,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: 100%; /* Align items to the top of the container */
+  height: 100%;
   width: 100%;
 }
 
@@ -96,6 +96,7 @@
 }
 
 .sizes{
+  position: absolute;
   display: flex;
   flex-wrap: wrap;
   max-width: 100%;
@@ -104,10 +105,15 @@
 }
 
 .size {
-  border: 1px solid black;
+  border: 2px solid black;
   width: 2em;
   height: 2em;
   padding: .3em;
   margin: .3em;
   font-size: 0.5em;
+  align-items: center;
+}
+
+.faded-size{
+  opacity: .4;
 }
