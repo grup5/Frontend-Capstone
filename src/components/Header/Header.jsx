@@ -20,6 +20,7 @@ function Header({onToggleCurrency}) {
                     <div id='icons-container'>
                         <a className='icon' href="">
                         <FontAwesomeIcon icon={faMagnifyingGlass}/>
+                        
                         </a>
                         <a className='icon' href="" onClick={handleToggle}>USD</a>
                         <a className='icon' href="">

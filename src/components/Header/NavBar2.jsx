@@ -1,10 +1,9 @@
 import { faChevronDown} from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect } from 'react';
 import Header from './Header';
-import NavBar2 from './NavBar2';
 import './navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-function NavBar() {
+function NavBar2() {
     const currencies = [
         'AED د.إ',
         'AFN ؋',
@@ -91,7 +90,7 @@ function NavBar() {
 ]
 
     const [isCurrencyVisible, setCurrencyVisible] = useState(false);
-    const [showNavBar2, setShowNavBar2] = useState(false)
+    const [isStickyHeader, setStickyHeader] = useState(false)
 
     const toggleCurrencyDropdown = () => {
         setCurrencyVisible(!isCurrencyVisible);
@@ -101,8 +100,9 @@ function NavBar() {
     useEffect(() => {
         const handleScroll = () => {
             const offset = window.scrollY;
+            const threshold = 150;
 
-            setShowNavBar2(offset > 150);
+            setStickyHeader(offset > threshold);
         };
 
         window.addEventListener('scroll', handleScroll);
@@ -114,10 +114,7 @@ function NavBar() {
 
     return (
         <>
-        {showNavBar2 ? (
-            <NavBar2 />
-        ) : (
-            <div id='fullheader-container'>
+        <div id='fullheader-container2'>
         <Header onToggleCurrency={toggleCurrencyDropdown}/>
         <div id="navbar">
             <ul>
@@ -176,9 +173,8 @@ function NavBar() {
             </div>
         </div>
 </div>
-)}
 </>
 )
 }
 
-export default NavBar
+export default NavBar2
