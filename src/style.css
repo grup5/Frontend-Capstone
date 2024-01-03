@@ -1,4 +1,5 @@
 .bodyclass{
     display: flex;
     flex-direction: row;
+    height: 86vh;
 }
