@@ -77,10 +77,19 @@ select {
 
 .custom-select {
     position: relative;
+    display: flex;
+    align-items: center;
+    background: #000;
+    width: 140px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #444;
+    padding: 0px;
+    font-size: 14px;
+    justify-content: center;
 }
 
 .custom-select:after {
-    content: '';
     position: absolute;
     right: 10px;
     top: 50%;

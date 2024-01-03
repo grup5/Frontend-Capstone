@@ -6,9 +6,9 @@ const StickyFooter = () => {
     const [quantity, setQuantity] = useState(1);
     const [style, setStyle] = useState('');
 
-    //appears after 200px scroll
+    //appears after 300px scroll
     const toggleVisibility = () => {
-        if (window.scrollY > 200) {
+        if (window.scrollY > 300) {
             setIsVisible(true);
         } else {
             setIsVisible(false);
