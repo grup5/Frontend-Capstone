@@ -3,13 +3,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faShoppingBag} from '@fortawesome/free-solid-svg-icons';
 import {faUser, faHeart } from '@fortawesome/free-regular-svg-icons';
 // Function propdrilled from NavBar to toggle the currency menu
-function Header({onToggleCurrency}) {
-    function handleToggle(e) {
+function Header({onToggleCurrency, onToggleSearch, isSearchPageActive}) {
+    function handleToggleCurrency(e) {
         e.preventDefault()
         onToggleCurrency()
     }
+    function handleToggleSearch(e) {
+        e.preventDefault()
+        onToggleSearch()
+    }
     return (
-        //Overall Header Container
+        // Overall Header Container 
         <div className="header-container">
             {/* Left Section of the header set to a . for spacing */}
             <div className='left-header'>
@@ -22,10 +26,10 @@ function Header({onToggleCurrency}) {
                 {/* Right section of the header to hold all icons */}
                 <div id='right-header'>
                     <div id='icons-container'>
-                        <a className='icon' href="">
+                        <a className='icon' href="" onClick={handleToggleSearch}>
                         <FontAwesomeIcon icon={faMagnifyingGlass}/>   
                         </a>
-                        <a className='icon' href="" onClick={handleToggle}>USD</a>
+                        <a className='icon' href="" onClick={handleToggleCurrency}>USD</a>
                         <a className='icon' href="">
                         <FontAwesomeIcon icon={faUser}/>
                         </a>

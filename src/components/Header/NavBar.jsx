@@ -1,4 +1,4 @@
-import { faChevronDown} from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect } from 'react';
 import Header from './Header';
 import NavBar2 from './NavBar2';
@@ -92,26 +92,41 @@ function NavBar() {
 ]
 // UseState for the currency and stickyHeader visibility
     const [isCurrencyVisible, setCurrencyVisible] = useState(false);
-    const [showNavBar2, setShowNavBar2] = useState(false)
+    const [showNavBar2, setShowNavBar2] = useState(false);
+    const [isSearchPageActive, setSearchPageActive] = useState(false);
+    const [searchInput, setSearchInput] = useState('');
 // function for the currency dropdown
     const toggleCurrencyDropdown = () => {
         setCurrencyVisible(!isCurrencyVisible);
         console.log('working')
     };
 // useEffect to handle when user scrolls past the header show the NavBar2 component
-    useEffect(() => {
-        const handleScroll = () => {
-            const offset = window.scrollY;
+const handleScroll = () => {
+    const offset = window.scrollY;
+    if(!isSearchPageActive) {
+        setShowNavBar2(offset > 150);
+    }
+};
 
-            setShowNavBar2(offset > 150);
-        };
+const closeSearchPage = () => {
+    setSearchPageActive(false)
+}
 
+const openSearchPage = () => {
+    setSearchPageActive(true);
+  };
+
+  const clearSearchInput = () => {
+    setSearchInput('');
+};
+
+useEffect(() => {
         window.addEventListener('scroll', handleScroll);
 
         return () => {
             window.removeEventListener('scroll', handleScroll)
         };
-    }, []);
+    }, [isSearchPageActive]);
 
     return (
         <>
@@ -121,8 +136,20 @@ function NavBar() {
         ) : (
             // Full Header container
             <div id='fullheader-container'>
+                <div className={`search-dropdown ${isSearchPageActive ? 'search-dropdown-active' : ''}`} style={{ visibility: isSearchPageActive ? 'visible' : 'hidden' }}>
+                    <div className='search-content' >
+                        <p>What are you looking for?</p>
+                        <input type="text" placeholder='Search for products, brands, and more' value={searchInput} onChange={(e) => setSearchInput(e.target.value)}/>
+                        {searchInput && (
+                                    <button className='search-clear-button' onClick={clearSearchInput}>X</button>
+                        )}
+                    </div>
+                    <div className='search-exit' onClick={closeSearchPage}>X</div>
+                    <div className='search-glass'><FontAwesomeIcon icon={faMagnifyingGlass}/></div>
+                    <div className='search-page'></div>
+                </div>
                 {/* Header component */}
-        <Header onToggleCurrency={toggleCurrencyDropdown}/>
+        <Header onToggleCurrency={toggleCurrencyDropdown} onToggleSearch={openSearchPage} isSearchPageActive={isSearchPageActive}/>
         {/* NavBar section */}
         <div id="navbar">
             {/* unordered lists to show the categories on navbar */}
