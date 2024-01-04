@@ -1,25 +1,25 @@
 .image-gallery{
     display: flex;
     flex-direction: row;
-    height: 100%;
-    width: 45%;
+    height: 90vh;
+    width: 50%;
     margin-top: .3%;
     margin-right: 3%;
     padding-bottom: 5%;
 }
 .sidebar{
-    display: flex;
+    display: block;
     flex-direction: column;
     width: 20%;
     height: 100%;
-    max-height: 100%;
-    margin-left: 8%;
+    margin-left: 10%;
 }
 .main-content{
     display: flex;
     width: 80%;
     height: 100%;
     object-fit: contain;
+    padding-right: 8%;
 }
 .thumbnail{
     display: flex;
@@ -32,6 +32,7 @@
 .active-thumbnail{
     display: flex;
     opacity: 50%;
+    width: 100%;
     height: 20%;
     object-fit: contain;
     padding-bottom: 8%;
@@ -52,6 +53,8 @@
   height: 100%;
   overflow: hidden;
   object-fit: contain;
+  left: 0;
+  top: 0;
 }
 
 .large-image:hover img {
@@ -59,7 +62,7 @@
   cursor: crosshair;
   width: 100%;
   height: 100%;
- 
+
 }
 
 @media (max-width: 1100px ) {
@@ -75,7 +78,7 @@
     height: auto;
     width: 100%;
     max-width: 100%;
-    margin-left: 1vw;
+
   }
 
   .sidebar {
@@ -84,6 +87,7 @@
     flex-direction: row;
     height: 20%;
     padding-top: 2%;
+    margin-right: 4%;
   }
   .active-thumbnail{
     display: flex;
