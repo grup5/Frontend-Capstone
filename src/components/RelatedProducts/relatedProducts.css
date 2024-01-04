@@ -10,7 +10,7 @@
   color:#1b1b1b;
 }
 .carousel-container h5{
-  margin: 2em;
+  margin: 2rem;
 }
 
 
@@ -22,10 +22,10 @@
 }
 
 .slick-slide > div {
-  margin: 0 .8em;
+  margin: 0 .8rem;
 }
 .slick-list {
-  margin: 0 .8em;
+  margin: 0 .8rem;
 }
 
 .slick-prev:before,
@@ -48,18 +48,7 @@
 .pop-up > :nth-child(2) {
   margin-top: auto; /* Push the second item to the bottom */
 }
-.new-tag{
-  font-size: small;
-  background-color: #262626;
-  color: white;
-  margin: .2em;
-  padding-left: .8em;
-  padding-right: .8em;
-  padding-top: .1em;
-  padding-bottom: .1em;
-  max-width: 80%;
-  margin-bottom: 100%;
-}
+
 @keyframes slideInFromLeft {
   0% {
     transform: translateX(-10%); /* Start position outside the div on the left */
@@ -71,7 +60,7 @@
 
 .detail-tagRec{
   color: white;
-  padding: .4em;
+  padding: .4rem;
   text-align: center;
   margin-bottom: 30%;
   animation: slideInFromLeft .3s ease-out;
