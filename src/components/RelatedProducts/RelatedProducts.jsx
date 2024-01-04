@@ -77,6 +77,7 @@ export default function RelatedProducts() {
             <img
               src={hoveredProductId === product.id ? product.imageUrlBack : product.imageUrlFront}
               alt={product.name}
+              className={hoveredProductId === product.id ? "carousel-image image-back":"carousel-image image-front"}
             />
           </div>
         ))}

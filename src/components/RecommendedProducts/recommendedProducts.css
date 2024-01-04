@@ -17,13 +17,6 @@
   cursor: pointer;
 }
 
-.related-product img {
-  width: 100%; /* Make the image fill the slide container */
-  height: auto; /* Maintain aspect ratio */
-  transition: opacity 0.5s ease-in-out;
-  display: flex;
-}
-
 .slick-slide > div {
   margin: 0 .8rem;
 }
@@ -39,6 +32,34 @@
 .related-product{
   position: relative;
 }
+.carousel-image{
+  width: 100%;
+  object-fit: contain;
+}
+
+.image-front{
+  animation: fadeOut 1s forwards;
+}
+.image-back{
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+
+
+
+
 
 .pop-up{
   position: absolute;
@@ -47,6 +68,7 @@
   justify-content: flex-start;
   height: 100%;
   width: 100%;
+  z-index: 1;
 }
 
 .pop-up:hover{
@@ -70,6 +92,7 @@
   padding-bottom: .1rem;
   width: 3rem;
   margin-bottom: 100%;
+  z-index: 1;
 }
 @keyframes slideInFromLeft {
   0% {

@@ -120,14 +120,15 @@ export default function RelatedProducts() {
                       checkSizes(product)
                     }
                   </div>
-
             }
-            <img
-              src={hoveredProductId === product.id ? product.imageUrlBack : product.imageUrlFront}
-              alt={product.name}
-              className={hoveredProductId === product.id ? "image-transition hovered-image" : "image-transition"}
-            />
-          </div>
+
+              <img
+                src={hoveredProductId === product.id ? product.imageUrlBack : product.imageUrlFront}
+                alt={product.name}
+                className={hoveredProductId === product.id ? "carousel-image image-back":"carousel-image image-front"}
+              />
+
+            </div>
         ))}
       </Slider>
     </div>
