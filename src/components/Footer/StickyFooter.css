@@ -46,7 +46,7 @@
 }
 
 .sticky-footer select {
-    padding: 5px 18px;
+    padding: 10px 25px;
     margin: 0 5px;
     background: #000;
     color: white;
@@ -55,6 +55,11 @@
     cursor: pointer;
     font-family: 'Fjalla One', Arial, Tahoma, Verdana, sans-serif;
     font-size: 15px;
+    border: 1px solid #444;
+}
+
+.sticky-footer img {
+    padding: 10px;
 }
 
 .cart-button button {
@@ -66,36 +71,7 @@
     background: #000;
     color: white;
     
-}
-
-select {
-    background: #000;
-    color: white;
-    border: 1px solid #444;
-    padding: 9px 50px;
-}
-
-.custom-select {
-    position: relative;
-    display: flex;
-    align-items: center;
-    background: #000;
-    width: 140px;
-    height: 40px;
-    border-radius: 5px;
-    border: 1px solid #444;
-    padding: 0px;
-    font-size: 14px;
-    justify-content: center;
-}
-
-.custom-select:after {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    border: solid white;
-    border-width: 0 2px 2px 0;
+    
 }
 
 .quantity-controls {

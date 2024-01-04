@@ -67,7 +67,8 @@ const Description = () => {
                     <img src={skull} style={{
                     height: "100px",
                     width: 'auto',
-                    marginLeft: '2px'}}/>
+                    marginLeft: '2px',
+                    paddingTop: '14px'}}/>
                 </div>
                 <Bubble 
                     Bubble={Bubble}
