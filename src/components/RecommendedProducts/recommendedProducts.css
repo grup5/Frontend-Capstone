@@ -10,40 +10,25 @@
   color:#1b1b1b;
 }
 .carousel-container h5{
-  margin: 2em;
+  margin: 2rem;
 }
 
 .carousel-container img:hover{
   cursor: pointer;
 }
 
-
-.hovered-image {
-  opacity: 0;
-}
-
-.image-transition {
+.related-product img {
   width: 100%; /* Make the image fill the slide container */
   height: auto; /* Maintain aspect ratio */
-  opacity: 1; /* Set default opacity to 0 */
-  transition: opacity 0.3s ease; /* Transition for opacity */
+  transition: opacity 0.5s ease-in-out;
+  display: flex;
 }
-
-.related-product:hover .image-transition {
-  opacity: 0; /* Set opacity to 0 when not hovered */
-}
-
-.related-product:hover .hovered-image {
-  opacity: 1; /* Set opacity to 1 when hovered */
-}
-
-
 
 .slick-slide > div {
-  margin: 0 .8em;
+  margin: 0 .8rem;
 }
 .slick-list {
-  margin: 0 .8em;
+  margin: 0 .8rem;
 }
 
 .slick-prev:before,
@@ -54,6 +39,7 @@
 .related-product{
   position: relative;
 }
+
 .pop-up{
   position: absolute;
   display: flex;
@@ -67,9 +53,8 @@
   cursor: pointer;
 }
 .pop-up > :first-child {
-  margin-bottom: 20px; /* Add margin to separate from the second item */
+  margin-bottom: 60%; /* Add margin to separate from the second item */
 }
-
 /* Style for the second item */
 .pop-up > :nth-child(2) {
   margin-top: auto; /* Push the second item to the bottom */
@@ -79,11 +64,11 @@
   background-color: #262626;
   color: white;
   margin: .2rem;
-  padding-left: .3rem;
-  padding-right: .3rem;
+  padding-left: .2rem;
+  padding-right: .2rem;
   padding-top: .1rem;
   padding-bottom: .1rem;
-  max-width: 30%;
+  width: 3rem;
   margin-bottom: 100%;
 }
 @keyframes slideInFromLeft {
@@ -95,16 +80,18 @@
   }
 }
 
-.detail-tag{
+.detail-tagRec{
   color: white;
   padding: .4rem;
   text-align: center;
-  margin-bottom: 30%;
+  margin-bottom: 20%;
   animation: slideInFromLeft .3s ease-out;
-  transform: translateX(-5%) 
+  transform: translateX(-5%);
+  width: 8em;
+  max-width: 80%;
 }
 
-.detail-tag p{
+.detail-tagRec p{
   font-size: .5rem
 }
 
