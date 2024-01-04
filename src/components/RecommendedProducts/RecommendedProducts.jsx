@@ -31,15 +31,17 @@ export default function RelatedProducts() {
   const clothingSizes = ["XS","S","M","L","XL","2XL","3XL"]
   const shoeSizes = ["6","7","8","9","10","11","12"]
 
+  
   function checkSizes(product) {
+    const style = {backgroundColor:product.color,color:"white", borderColor:"white"}
     if (product.sizeType === "shoes") {
       return shoeSizes.map((size) =>
         product.sizes.includes(size) ? (
-          <div key={size} className="size">
+          <div key={size} className="size" style={style}>
             {size}
           </div>
         ) : (
-          <div key={size} className="size faded-size">
+          <div key={size} className="size faded-size" style={style}>
             {size}
           </div>
         )
@@ -47,11 +49,11 @@ export default function RelatedProducts() {
     } else if (product.sizeType === "clothing") {
       return clothingSizes.map((size) =>
         product.sizes.includes(size) ? (
-          <div key={size} className="size">
+          <div key={size} className="size" style={style}>
             {size}
           </div>
         ) : (
-          <div key={size} className="size faded-size">
+          <div key={size} className="size faded-size" style={style}>
             {size}
           </div>
         )
