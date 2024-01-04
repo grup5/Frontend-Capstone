@@ -107,15 +107,20 @@
   color: white;
   padding: .4rem;
   text-align: center;
-  margin-bottom: 20%;
+  margin-bottom: 10rem;
   animation: slideInFromLeft .3s ease-out;
   transform: translateX(-5%);
   width: 8em;
-  max-width: 80%;
+  max-width: 90%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.detail-tag h6{
+  font-size: 2rem;
 }
 
 .detail-tagRec p{
-  font-size: .5rem
+  font-size: .6rem
 }
 
 .sizes{

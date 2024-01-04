@@ -38,13 +38,13 @@ export default function RelatedProducts() {
     autoplaySpeed: 5000,
     responsive: [
       {
-        breakpoint: 700,
+        breakpoint: 1022,
         settings: {
           slidesToShow: 3,
         },
       },
       {
-        breakpoint: 500,
+        breakpoint: 768,
         settings: {
           slidesToShow: 2,
           centerMode: false, // Disable center mode on smaller screens
