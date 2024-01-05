@@ -88,24 +88,37 @@ function NavBar() {
         'QAR ر.ق',
         'RON Lei',
         'RSD РСД',
-        'RWF FRw'
+        'RWF FRw',
+        'USD'
 ]
 // UseState for the currency and stickyHeader visibility
     const [isCurrencyVisible, setCurrencyVisible] = useState(false);
+    const [isLoginVisible, setLoginVisible] = useState(false)
     const [showNavBar2, setShowNavBar2] = useState(false);
     const [isSearchPageActive, setSearchPageActive] = useState(false);
     const [searchInput, setSearchInput] = useState('');
+    const [selectedCurrency, setSelectedCurrency] = useState('USD');
 // function for the currency dropdown
     const toggleCurrencyDropdown = () => {
         setCurrencyVisible(!isCurrencyVisible);
-        console.log('working')
+        setLoginVisible(false)
     };
+
+    const toggleLoginDropdown = () => {
+        setLoginVisible(!isLoginVisible);
+        setCurrencyVisible(false)
+    }
 // useEffect to handle when user scrolls past the header show the NavBar2 component
 const handleScroll = () => {
     const offset = window.scrollY;
     if(!isSearchPageActive) {
         setShowNavBar2(offset > 150);
     }
+};
+
+const handleCurrencyClick = (currency) => {
+    setSelectedCurrency(currency);
+    // setCurrencyVisible(false); 
 };
 
 const closeSearchPage = () => {
@@ -149,7 +162,7 @@ useEffect(() => {
                     <div className='search-page'></div>
                 </div>
                 {/* Header component */}
-        <Header onToggleCurrency={toggleCurrencyDropdown} onToggleSearch={openSearchPage} isSearchPageActive={isSearchPageActive}/>
+        <Header onToggleCurrency={toggleCurrencyDropdown} onToggleLogin={toggleLoginDropdown} onToggleSearch={openSearchPage} isSearchPageActive={isSearchPageActive} selectedCurrency={selectedCurrency}/>
         {/* NavBar section */}
         <div id="navbar">
             {/* unordered lists to show the categories on navbar */}
@@ -205,7 +218,27 @@ useEffect(() => {
                 <p>Select a Language</p>
                 <div className='currency-container'>
                     {currencies.map((currency, index) => (
-                        <button className='currency-item'>{currency}</button>
+                        <button 
+                            key={index} 
+                            className={`currency-item ${selectedCurrency === currency ? 'selected' : ''}`} 
+                            onClick={() => handleCurrencyClick(currency)}>
+                                {currency}
+                        </button>
+                        ))}
+                </div>
+            </div>
+            <div className={`login-dropdown ${isLoginVisible ? 'visible' : 'hidden'}`}>
+                <button className='login-btn'>LOGIN</button>
+                <p className='register'>New User? <strong>Register Now</strong></p>
+                <p>Select a Language</p>
+                <div className='currency-container'>
+                    {currencies.map((currency, index) => (
+                        <button 
+                            key={index} 
+                            className={`currency-item ${selectedCurrency === currency ? 'selected' : ''}`} 
+                            onClick={() => handleCurrencyClick(currency)}>
+                                {currency}
+                        </button>
                         ))}
                 </div>
             </div>
