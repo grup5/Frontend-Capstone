@@ -10,40 +10,18 @@
   color:#1b1b1b;
 }
 .carousel-container h5{
-  margin: 2em;
+  margin: 2rem;
 }
 
 .carousel-container img:hover{
   cursor: pointer;
 }
 
-
-.hovered-image {
-  opacity: 0;
-}
-
-.image-transition {
-  width: 100%; /* Make the image fill the slide container */
-  height: auto; /* Maintain aspect ratio */
-  opacity: 1; /* Set default opacity to 0 */
-  transition: opacity 0.3s ease; /* Transition for opacity */
-}
-
-.related-product:hover .image-transition {
-  opacity: 0; /* Set opacity to 0 when not hovered */
-}
-
-.related-product:hover .hovered-image {
-  opacity: 1; /* Set opacity to 1 when hovered */
-}
-
-
-
 .slick-slide > div {
-  margin: 0 .8em;
+  margin: 0 .8rem;
 }
 .slick-list {
-  margin: 0 .8em;
+  margin: 0 .8rem;
 }
 
 .slick-prev:before,
@@ -54,6 +32,35 @@
 .related-product{
   position: relative;
 }
+.carousel-image{
+  width: 100%;
+  object-fit: contain;
+}
+
+.image-front{
+  animation: fadeOut 1s forwards;
+}
+.image-back{
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
 .pop-up{
   position: absolute;
   display: flex;
@@ -61,30 +68,31 @@
   justify-content: flex-start;
   height: 100%;
   width: 100%;
+  z-index: 1;
 }
 
 .pop-up:hover{
   cursor: pointer;
 }
 .pop-up > :first-child {
-  margin-bottom: 20px; /* Add margin to separate from the second item */
+  margin-bottom: 60%; /* Add margin to separate from the second item */
 }
-
 /* Style for the second item */
 .pop-up > :nth-child(2) {
   margin-top: auto; /* Push the second item to the bottom */
 }
 .new-tag{
-  font-size: small;
+  font-size: .8rem;
   background-color: #262626;
   color: white;
-  margin: .2em;
-  padding-left: .8em;
-  padding-right: .8em;
-  padding-top: .1em;
-  padding-bottom: .1em;
-  max-width: 50%;
+  margin: .2rem;
+  padding-left: .2rem;
+  padding-right: .2rem;
+  padding-top: .1rem;
+  padding-bottom: .1rem;
+  width: 3rem;
   margin-bottom: 100%;
+  z-index: 1;
 }
 @keyframes slideInFromLeft {
   0% {
@@ -95,17 +103,24 @@
   }
 }
 
-.detail-tag{
+.detail-tagRec{
   color: white;
-  padding: .4em;
+  padding: .4rem;
   text-align: center;
-  margin-bottom: 30%;
+  margin-bottom: 10rem;
   animation: slideInFromLeft .3s ease-out;
-  transform: translateX(-5%) 
+  transform: translateX(-5%);
+  width: 8em;
+  max-width: 90%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.detail-tag h6{
+  font-size: 2rem;
 }
 
 .detail-tagRec p{
-  font-size: xx-small
+  font-size: .6rem
 }
 
 .sizes{
@@ -119,11 +134,11 @@
 
 .size {
   border: 2px solid black;
-  width: 2em;
-  height: 2em;
-  padding: .3em;
-  margin: .3em;
-  font-size: 0.5em;
+  width: 1rem;
+  height: 1rem;
+  padding: .1rem;
+  margin: .1rem;
+  font-size: 0.5rem;
   align-items: center;
 }
 
