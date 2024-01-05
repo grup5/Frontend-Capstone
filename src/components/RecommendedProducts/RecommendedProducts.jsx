@@ -90,7 +90,7 @@ export default function RelatedProducts() {
   return (
 
     <div className="carousel-container">
-      <h5>Recommended Products</h5>
+      <h3>Recommended Products</h3>
       <Slider {...settings}>
         {products.map((product) => (
           <div

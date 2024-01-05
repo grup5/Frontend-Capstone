@@ -140,6 +140,7 @@ cursor: pointer;
   opacity: 0;
   -webkit-animation: slide-top 1s ease-in reverse both;
   animation: slide-top 1s ease-in reverse both;
+  font-family: 'Fjalla One', sans-serif;
 }
 @-webkit-keyframes slide-top {
   0% {
