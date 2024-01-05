@@ -55,7 +55,7 @@ export default function RelatedProducts() {
 
   return (
     <div className="carousel-container">
-      <h5>Related Products</h5>
+      <h3>Related Products</h3>
       <Slider {...settings}>
         {products.map((product) => (
           <div
