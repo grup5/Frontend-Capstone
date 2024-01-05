@@ -3,10 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass, faShoppingBag} from '@fortawesome/free-solid-svg-icons';
 import {faUser, faHeart } from '@fortawesome/free-regular-svg-icons';
 // Function propdrilled from NavBar to toggle the currency menu
-function Header({onToggleCurrency, onToggleSearch, isSearchPageActive}) {
+function Header({onToggleCurrency, onToggleSearch, selectedCurrency, onToggleLogin}) {
     function handleToggleCurrency(e) {
         e.preventDefault()
         onToggleCurrency()
+    }
+    function handleToggleLogin(e) {
+        e.preventDefault()
+        onToggleLogin()
     }
     function handleToggleSearch(e) {
         e.preventDefault()
@@ -29,8 +33,8 @@ function Header({onToggleCurrency, onToggleSearch, isSearchPageActive}) {
                         <a className='icon' href="" onClick={handleToggleSearch}>
                         <FontAwesomeIcon icon={faMagnifyingGlass}/>   
                         </a>
-                        <a className='icon' href="" onClick={handleToggleCurrency}>USD</a>
-                        <a className='icon' href="">
+                        <a className='icon' href="" onClick={handleToggleCurrency}>{selectedCurrency}</a>
+                        <a className='icon' href="" onClick={handleToggleLogin}>
                         <FontAwesomeIcon icon={faUser}/>
                         </a>
                         <a className='icon' href="">
