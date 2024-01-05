@@ -15,7 +15,7 @@ const SizeGuide = ({ size, parsedData }) => {
           fontFamily: 'Fjalla One, sans-serif',
           fontSize: '24px',
           letterSpacing: '0.02rem',
-          maxWidth: '500px',
+          marginRight: '8px',
           marginTop: '15px',
           marginBottom: '15px',
           borderBottom: '1px solid #333',
@@ -27,9 +27,11 @@ const SizeGuide = ({ size, parsedData }) => {
       >
         SIZE GUIDE
       </div>
+      <div style={{height: '210px'}}>
       {showSizeDisplay && (
         <SizeDisplay size={size} parsedData={parsedData} />
       )}
+      </div>
     </>
   );
 };
