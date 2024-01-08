@@ -6,10 +6,13 @@ import bluebeanie from '/img/footerimages/bluebeanie.webp';
 import greenbeanie from '/img/footerimages/greenbeanie.webp';
 
 const StickyFooter = () => {
+    
+    //react states
     const [isVisible, setIsVisible] = useState(false);
     const [quantity, setQuantity] = useState(1);
     const [style, setStyle] = useState('');
 
+    //images
     const beanieImages = {
         red: redbeanie,
         yellow: yellowbeanie,
