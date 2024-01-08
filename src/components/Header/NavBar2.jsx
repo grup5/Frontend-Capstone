@@ -1,11 +1,9 @@
 import { faChevronDown, faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 import { useState, useEffect } from 'react';
 import Header from './Header';
-import NavBar2 from './NavBar2';
 import './navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-function NavBar() {
-    // Array holding all currency values
+function NavBar2() {
     const currencies = [
         'AED د.إ',
         'AFN ؋',
@@ -91,14 +89,14 @@ function NavBar() {
         'RWF FRw',
         'USD'
 ]
-// UseState for the currency and stickyHeader visibility
+
     const [isCurrencyVisible, setCurrencyVisible] = useState(false);
     const [isLoginVisible, setLoginVisible] = useState(false)
     const [showNavBar2, setShowNavBar2] = useState(false);
     const [isSearchPageActive, setSearchPageActive] = useState(false);
     const [searchInput, setSearchInput] = useState('');
     const [selectedCurrency, setSelectedCurrency] = useState('USD');
-// function for the currency dropdown
+    // function for the currency dropdown
     const toggleCurrencyDropdown = () => {
         setCurrencyVisible(!isCurrencyVisible);
         setLoginVisible(false)
@@ -108,32 +106,32 @@ function NavBar() {
         setLoginVisible(!isLoginVisible);
         setCurrencyVisible(false)
     }
-// useEffect to handle when user scrolls past the header show the NavBar2 component
-const handleScroll = () => {
+    // useEffect to handle when user scrolls past the header show the NavBar2 component
+    const handleScroll = () => {
     const offset = window.scrollY;
     if(!isSearchPageActive) {
         setShowNavBar2(offset > 150);
     }
-};
+    };
 
-const handleCurrencyClick = (currency) => {
+    const handleCurrencyClick = (currency) => {
     setSelectedCurrency(currency);
     // setCurrencyVisible(false); 
-};
+    };
 
-const closeSearchPage = () => {
+    const closeSearchPage = () => {
     setSearchPageActive(false)
-}
+    }
 
-const openSearchPage = () => {
+    const openSearchPage = () => {
     setSearchPageActive(true);
-  };
+    };
 
-  const clearSearchInput = () => {
+    const clearSearchInput = () => {
     setSearchInput('');
-};
+    };
 
-useEffect(() => {
+    useEffect(() => {
         window.addEventListener('scroll', handleScroll);
 
         return () => {
@@ -141,14 +139,10 @@ useEffect(() => {
         };
     }, [isSearchPageActive]);
 
+
     return (
         <>
-        {/* conditional checks if useEffect set NavBar2 if it did show the stickyHeader if not display the regular header */}
-        {showNavBar2 ? (
-            <NavBar2 />
-        ) : (
-            // Full Header container
-            <div id='fullheader-container'>
+        <div id='fullheader-container2'>
                 <div className={`search-dropdown ${isSearchPageActive ? 'search-dropdown-active' : ''}`} style={{ visibility: isSearchPageActive ? 'visible' : 'hidden' }}>
                     <div className='search-content' >
                         <p>What are you looking for?</p>
@@ -244,9 +238,8 @@ useEffect(() => {
             </div>
         </div>
 </div>
-)}
 </>
 )
 }
 
-export default NavBar
+export default NavBar2

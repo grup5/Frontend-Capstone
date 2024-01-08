@@ -1,6 +1,6 @@
 const List = ({parsedData, dot}) => {
     return (
-    <ul id="description-list" style={{marginBottom: '4px', paddingTop:'8px', paddingInlineStart:'35px'}}>
+    <ul id="description-list" style={{marginBottom: '4px', paddingTop:'8px', paddingInlineStart:'32px'}}>
         {parsedData.map((item, index) => (
             Object.keys(item).map(key => {
                 if (key.includes('com')) {

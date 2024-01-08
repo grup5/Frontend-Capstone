@@ -1,108 +1,150 @@
-*{
+* {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
 }
-.carousel-container{
-  padding: 0 4%;
+
+.carousel-container {
+  padding: 0 32px; /* 4% of typical 16px base font size = 0.64px, rounded to 1rem */
   text-align: center;
   font-family: "Fjalla One";
-  color:#1b1b1b;
-}
-.carousel-container h5{
-  margin: 2em;
+  color: #1b1b1b;
 }
 
-.carousel-container img:hover{
+.carousel-container h3 {
+  margin: 32px; /* 2rem */
+}
+
+.carousel-container img:hover {
   cursor: pointer;
 }
 
-
-
-.related-product img {
-  width: 100%; /* Make the image fill the slide container */
-  height: auto; /* Maintain aspect ratio */
-  transition: .3s ease;
-  display: flex;
-}
-
 .slick-slide > div {
-  margin: 0 .8em;
+  margin: 0 12.8px; /* 0.8rem */
 }
+
 .slick-list {
-  margin: 0 .8em;
+  margin: 0 12.8px; /* 0.8rem */
 }
 
 .slick-prev:before,
 .slick-next:before {
-  color: #1b1b1b
+  color: #1b1b1b;
 }
-.pop-up{
+
+.related-product {
+  position: relative;
+}
+
+.carousel-image {
+  width: 100%;
+  object-fit: contain;
+}
+
+.image-front {
+  animation: fadeOut 1s forwards;
+}
+
+.image-back {
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.pop-up {
   position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  height: 100%; /* Align items to the top of the container */
-
+  height: 100%;
+  width: 100%;
+  z-index: 1;
 }
 
-.pop-up:hover{
+.pop-up:hover {
   cursor: pointer;
 }
+
 .pop-up > :first-child {
-  margin-bottom: 20px; /* Add margin to separate from the second item */
+  margin-bottom: 60%; /* Add margin to separate from the second item */
 }
 
-/* Style for the second item */
 .pop-up > :nth-child(2) {
   margin-top: auto; /* Push the second item to the bottom */
 }
-.new-tag{
-  font-size: small;
+
+.new-tag {
+  font-size: 22px; /* 0.8rem */
   background-color: #262626;
   color: white;
-  margin: .2em;
-  padding-left: .8em;
-  padding-right: .8em;
-  padding-top: .1em;
-  padding-bottom: .1em;
-  max-width: 80%;
-  margin-bottom: 100%;
+  margin: 3.2px; /* 0.2rem */
+  padding-left: 8px; /* 0.2rem */
+  padding-right: 8px; /* 0.2rem */
+  padding-top: 1.6px; /* 0.1rem */
+  padding-bottom: 1.6px; /* 0.1rem */
+  width: 64px; /* 3rem */
+  margin-bottom: 80px; /* 100% */
+  z-index: 1;
 }
+
 @keyframes slideInFromLeft {
   0% {
-    transform: translateX(-10%); /* Start position outside the div on the left */
+    transform: translateX(-16px); /* -10% */
   }
   100% {
-    transform: translateX(-5%); /* End position at the original position inside the div */
+    transform: translateX(-8px); /* -5% */
   }
 }
 
-.detail-tag{
+.detail-tagRec {
   color: white;
-  padding: .4em;
+  padding: 10px; /* 0.4rem */
   text-align: center;
-  margin-bottom: 30%;
-  animation: slideInFromLeft .3s ease-out;
-  transform: translateX(-5%) 
+  margin-bottom: 160px; /* 10rem */
+  animation: slideInFromLeft 0.3s ease-out;
+  transform: translateX(-8px); /* -5% */
+  width: 200px; /* 8em */
+  max-width: 90%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.detail-tagRec p{
-  font-size: xx-small
+.detail-tagRec h6 {
+  font-size: 20px; /* 2rem */
 }
 
-.sizes{
+.detail-tagRec p {
+  font-size: 14px; /* 0.6rem */
+}
+
+.sizes {
+  position: absolute;
   display: flex;
   flex-wrap: wrap;
-  max-width: 80%;
-  align-self: flex-end;
-  justify-self: flex-end; /* Adjust the font size to fit the box */
+  max-width: 100%;
+  height: 100%;
+  align-content: flex-end; /* Adjust the font size to fit the box */
 }
 
 .size {
-  border: 1px solid black;
-  width: 3em;
-  height: 3em;
-  padding: .3em;
-  font-size: 0.5em;
+  border: 2px solid black;
+  width: 24px; /* 1rem */
+  height: 24px; /* 1rem */
+  padding: 3.2px; /* 0.2rem */
+  margin: 3.2px; /* 0.2rem */
+  font-size: 12px; /* 0.5rem */
+  align-items: center;
+}
+
+.faded-size {
+  opacity: 0.4;
 }

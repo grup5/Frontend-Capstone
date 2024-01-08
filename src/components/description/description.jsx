@@ -7,6 +7,7 @@ import Colors from './colors.jsx';
 import AddToCart from './addtocart.jsx';
 import OneSizeFitsAll from './onesizefitsall.jsx';
 import SizeGuide from './sizeguide.jsx';
+import "./style.css";
 
 const Description = () => {
     const [parsedData, setParsedData] = useState([]);
@@ -53,7 +54,7 @@ const Description = () => {
     }
 
     return (
-        <div id="description-container">
+        <div id="descriptioncontainer">
             <div style={{display: "flex"}}>
                 <div id="image">
                     <img src={tag} alt="Product" style={{height: '100px', width: 'auto'}} />
@@ -67,7 +68,8 @@ const Description = () => {
                     <img src={skull} style={{
                     height: "100px",
                     width: 'auto',
-                    marginLeft: '2px'}}/>
+                    marginLeft: '2px',
+                    paddingTop: '14px'}}/>
                 </div>
                 <Bubble 
                     Bubble={Bubble}

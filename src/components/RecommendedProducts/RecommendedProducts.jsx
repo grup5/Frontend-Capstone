@@ -7,6 +7,7 @@ import './recommendedProducts.css';
 
 export default function RelatedProducts() {
   let apiUrl;
+
   const [products, setProducts] = useState([]);
   const [hoveredProductId, setHoveredProductId] = useState(null)
   if (process.env.NODE_ENV === 'production') {
@@ -27,6 +28,39 @@ export default function RelatedProducts() {
     getProducts();
   }, []);
 
+  const clothingSizes = ["XS","S","M","L","XL","2XL","3XL"]
+  const shoeSizes = ["6","7","8","9","10","11","12"]
+
+  
+  function checkSizes(product) {
+    const style = {backgroundColor:product.color,color:"white", borderColor:"white"}
+    if (product.sizeType === "shoes") {
+      return shoeSizes.map((size) =>
+        product.sizes.includes(size) ? (
+          <div key={size} className="size" style={style}>
+            {size}
+          </div>
+        ) : (
+          <div key={size} className="size faded-size" style={style}>
+            {size}
+          </div>
+        )
+      );
+    } else if (product.sizeType === "clothing") {
+      return clothingSizes.map((size) =>
+        product.sizes.includes(size) ? (
+          <div key={size} className="size" style={style}>
+            {size}
+          </div>
+        ) : (
+          <div key={size} className="size faded-size" style={style}>
+            {size}
+          </div>
+        )
+      );
+    }
+    return null; // Return null if product sizeType is neither "shoes" nor "clothing"
+  }
   const settings = {
     infinite: true,
     speed: 500,
@@ -38,13 +72,13 @@ export default function RelatedProducts() {
     autoplaySpeed: 5000,
     responsive: [
       {
-        breakpoint: 700,
+        breakpoint: 1022,
         settings: {
-          slidesToShow: 5,
+          slidesToShow: 3,
         },
       },
       {
-        breakpoint: 500,
+        breakpoint: 768,
         settings: {
           slidesToShow: 2,
           centerMode: false, // Disable center mode on smaller screens
@@ -56,7 +90,7 @@ export default function RelatedProducts() {
   return (
 
     <div className="carousel-container">
-      <h5>Recommended Products</h5>
+      <h3>Recommended Products</h3>
       <Slider {...settings}>
         {products.map((product) => (
           <div
@@ -77,27 +111,26 @@ export default function RelatedProducts() {
                 </>
               
             }
+            </div>
+
             {
               hoveredProductId !== product.id &&
-              <div className='sizes'>
-                {
+
                   product.sizes&&
                   <div className='sizes'>
                     {
-                  product.sizes.map((size)=>(
-                    <div className='size'>{size}</div>
-                  ))
+                      checkSizes(product)
                     }
                   </div>
-                }
-              </div>
             }
+
+              <img
+                src={hoveredProductId === product.id ? product.imageUrlBack : product.imageUrlFront}
+                alt={product.name}
+                className={hoveredProductId === product.id ? "carousel-image image-back":"carousel-image image-front"}
+              />
+
             </div>
-            <img
-              src={hoveredProductId === product.id ? product.imageUrlBack : product.imageUrlFront}
-              alt={product.name}
-            />
-          </div>
         ))}
       </Slider>
     </div>

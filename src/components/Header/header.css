@@ -1,13 +1,4 @@
-body {
-    font-family: Fjalla One,Arial,Tahoma,Verdana,sans-serif;
-    background-color: #fff;
-    color: #333;
-    font-size: 15px;
-    line-height: 1.4;
-    margin: 0;
-    padding: 0;
-}
-
+/* Overall Header container styles */
 .header-container {
     position: relative;
     z-index: 3;
@@ -17,17 +8,14 @@ body {
     align-items: center;
     justify-content: space-between;
 }
-
+/* Left Header styles */
 .left-header {
     margin: 0;
     padding-right: 200px;
 }
 
 
-#icons-container {
-    justify-content: flex-end;
-}
-
+/* Logo section of the header */
 #middle-header {
     margin: 0;
     min-width: 170px;
@@ -43,9 +31,13 @@ body {
 #logo {
     height: 300px;
     margin: 0;
-    padding: 0;
+    padding: 17px;
     object-fit: fill;
     z-index: 1;
+}
+/* All styles for the icon container in the right portion of the header */
+#icons-container {
+    justify-content: flex-end;
 }
 
 #icons-container {
@@ -59,15 +51,16 @@ body {
     padding-right: 21px;
     color: #f8abff;
     text-decoration: none;
+    font-family: 'Fjalla One', sans-serif;
 }
-
+/* Number above the the shopping cart */
 #cart-count {
     position: relative;
     top: -13px;
     right: -4px;
     color: white;
 }
-
+/* All the currency dropdown styles and transitions to show/hide */
 .currency-dropdown {
   background-color: #fff;
   position: absolute;
@@ -107,3 +100,75 @@ body {
     top: 30px;
     transition: visibility 2s ease-in, opacity 0.3s linear, top .3s ease-in;
   }
+
+  .login-dropdown {
+    background-color: #fff;
+    position: absolute;
+    right: 20px;
+    top: 121px;
+    width: 290px;
+    padding: 10px;
+    z-index: 4;
+    transition: max-height 0.5s ease-in-out;
+  }
+  
+  .login-dropdown p {
+      color: #000;
+      font-size: 13px;
+  }
+
+  .login-btn {
+    width: 260px;
+    background-color: #161616;
+    color: white;
+    border-radius: 4px;
+    height: 35px;
+    border: none;
+    margin: 5px;
+    cursor: pointer;
+    transition: background-color .4s, color .4s, border .4s;
+    font-family: 'Fjalla One', sans-serif;
+  }
+
+  .login-btn:hover {
+    background-color: white;
+    color: #161616;
+    border: 2px solid #161616
+  }
+
+  .register {
+    text-align: center;
+    margin: 12px;
+  }
+
+  strong {
+    text-decoration: underline;
+  }
+
+  strong:hover {
+    text-decoration: none;
+  }
+  
+  .currency-item {
+      border: 1px solid rgba(0, 0, 0, .3);
+      border-radius: 3px;
+      opacity: .6;
+      font-size: 12px;
+      display: block;
+      color: #000;
+      background-color: #fff;
+  }
+  
+  .login-dropdown.visible {
+      visibility: visible;
+      opacity: 1;
+      top: 0px;
+      transition: visibility .7s ease-out, opacity 0.3s linear, top .3s ease-out;
+    }
+    
+    .login-dropdown.hidden {
+      visibility: hidden;
+      opacity: 0;
+      top: 30px;
+      transition: visibility 2s ease-in, opacity 0.3s linear, top .3s ease-in;
+    }
