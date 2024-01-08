@@ -18,6 +18,7 @@
     background-size: unset;
     background-repeat: no-repeat;
     background-position: right bottom;
+    width: 50%;
 }
 
   .anArea {
@@ -27,9 +28,9 @@
     position: relative;
     display: inline-block;
     border-radius: 50%;
-    height: 24px;
-    width: 16px;
-    background: black;
+    height: 20px;
+    width: 8px;
+    background: transparent;
   }
   .eye:after { /*pupil*/
     position: absolute;

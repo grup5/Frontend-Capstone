@@ -8,6 +8,7 @@ import AddToCart from './addtocart.jsx';
 import OneSizeFitsAll from './onesizefitsall.jsx';
 import SizeGuide from './sizeguide.jsx';
 import "./style.css";
+import $ from 'jquery'
 
 const Description = () => {
     const [parsedData, setParsedData] = useState([]);
@@ -51,6 +52,21 @@ const Description = () => {
         return <div></div>;
     }
 
+    $("#descriptioncontainer").mousemove(function(event) {
+        var eye = $(".eye");
+        console.log('eye', eye)
+        var x = (eye.offset().left) + (eye.width() / 2);
+        var y = (eye.offset().top) + (eye.height() / 2);
+        var rad = Math.atan2(event.pageX - x, event.pageY - y);
+        var rot = (rad * (180 / Math.PI) * -1) + 180;
+        eye.css({
+          '-webkit-transform': 'rotate(' + rot + 'deg)',
+          '-moz-transform': 'rotate(' + rot + 'deg)',
+          '-ms-transform': 'rotate(' + rot + 'deg)',
+          'transform': 'rotate(' + rot + 'deg)'
+        });
+      });
+
     return (
         <div id="descriptioncontainer">
             <div style={{ display: "flex" }}>
@@ -76,12 +92,12 @@ const Description = () => {
                         <div className='anArea' style={{
                             position: 'absolute',
                             top: '30px',
-                            left: '28px',
-                            width: '100%', // Adjust width and height as needed
+                            left: '24px',
+                            width: '80%', // Adjust width and height as needed
                             height: '100%',
                             pointerEvents: 'none', // Allow clicks to fall through
                         }}>
-                            <div className='eye' style={{marginRight: '5px'}}></div>
+                            <div className='eye' style={{marginRight: '8px'}}></div>
                             <div className='eye'></div>
                         </div>
                     </div>
