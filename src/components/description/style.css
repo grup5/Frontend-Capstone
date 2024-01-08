@@ -19,3 +19,25 @@
     background-repeat: no-repeat;
     background-position: right bottom;
 }
+
+  .anArea {
+    width: 100%;
+  }
+  .eye {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    height: 24px;
+    width: 16px;
+    background: black;
+  }
+  .eye:after { /*pupil*/
+    position: absolute;
+    bottom: 17px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    content: " ";
+  }

@@ -15,7 +15,7 @@ const SizeGuide = ({ size, parsedData }) => {
           fontFamily: 'Fjalla One, sans-serif',
           fontSize: '24px',
           letterSpacing: '0.02rem',
-          marginRight: '8px',
+          marginRight: '50px',
           marginTop: '15px',
           marginBottom: '15px',
           borderBottom: '1px solid #333',

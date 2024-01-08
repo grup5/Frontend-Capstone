@@ -47,29 +47,44 @@ const Description = () => {
         fetchData();
     }, []);
 
-    if(loading){
-        return (
-            <div></div>
-        )
+    if (loading) {
+        return <div></div>;
     }
 
     return (
         <div id="descriptioncontainer">
-            <div style={{display: "flex"}}>
+            <div style={{ display: "flex" }}>
                 <div id="image">
-                    <img src={tag} alt="Product" style={{height: '100px', width: 'auto'}} />
+                    <img src={tag} alt="Product" style={{ height: '100px', width: 'auto' }} />
                 </div>
                 <Name_Price Name_Price={Name_Price}
                     parsedData={parsedData}
                 />
             </div>
-            <div style={{display: "flex", fontFamily: 'Fjalla One, sans-serif'}}>
-                <div>
-                    <img src={skull} style={{
-                    height: "100px",
-                    width: 'auto',
-                    marginLeft: '2px',
-                    paddingTop: '14px'}}/>
+            <div style={{ display: "flex", fontFamily: 'Fjalla One, sans-serif' }}>
+                <div style={{ position: 'relative' }}>
+                    {/* Skull image */}
+                    <div style={{ position: 'relative' }}>
+                        <img src={skull} style={{
+                            height: "100px",
+                            width: 'auto',
+                            marginLeft: '2px',
+                            paddingTop: '14px',
+                            position: 'relative', // Ensure relative positioning for the parent
+                        }} alt="Skull" />
+                        {/* Area positioned absolutely on top of the skull */}
+                        <div className='anArea' style={{
+                            position: 'absolute',
+                            top: '30px',
+                            left: '28px',
+                            width: '100%', // Adjust width and height as needed
+                            height: '100%',
+                            pointerEvents: 'none', // Allow clicks to fall through
+                        }}>
+                            <div className='eye' style={{marginRight: '5px'}}></div>
+                            <div className='eye'></div>
+                        </div>
+                    </div>
                 </div>
                 <Bubble 
                     Bubble={Bubble}
