@@ -81,22 +81,9 @@ const Description = () => {
                 <div style={{ position: 'relative' }}>
                     {/* Skull image */}
                     <div style={{ position: 'relative' }}>
-                        <img src={skull} style={{
-                            height: "100px",
-                            width: 'auto',
-                            marginLeft: '2px',
-                            paddingTop: '14px',
-                            position: 'relative', // Ensure relative positioning for the parent
-                        }} alt="Skull" />
+                        <img src={skull} id='skull' alt="Skull" />
                         {/* Area positioned absolutely on top of the skull */}
-                        <div className='anArea' style={{
-                            position: 'absolute',
-                            top: '30px',
-                            left: '24px',
-                            width: '80%', // Adjust width and height as needed
-                            height: '100%',
-                            pointerEvents: 'none', // Allow clicks to fall through
-                        }}>
+                        <div className='anArea'>
                             <div className='eye' style={{marginRight: '8px'}}></div>
                             <div className='eye'></div>
                         </div>

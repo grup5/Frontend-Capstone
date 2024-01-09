@@ -1,3 +1,87 @@
+#descriptioncontainer {
+    background-image: url('src/components/description/verycoolbackground.png');
+    background-size: unset;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    width: 50%;
+}
+
+#nameandprice {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+#itemname {
+    font-size: 41px;
+    letter-spacing: 0.02rem;
+    font-weight: 800;
+    margin-left: 4px;
+    margin-top: 10px;
+}
+
+#itemprice {
+    font-size: 24px;
+    letter-spacing: 0.02rem;
+    font-weight: 600;
+    color: #6a6a6a;
+    margin-left: 4px;
+}
+
+#skull {
+    height: 100px;
+    width: auto;
+    margin-left: 2px;
+    padding-top: 14px;
+    position: relative;
+}
+
+.anArea {
+    position: absolute;
+    top: 30px;
+    left: 24px;
+    width: 80%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.eye {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    height: 20px;
+    width: 8px;
+    background: transparent;
+}
+
+.eye:after {
+    position: absolute;
+    bottom: 17px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    content: " ";
+}
+
+#speechbubble {
+    position: relative;
+    border: 2px solid black;
+    border-radius: 50%;
+    transform: rotate(357deg);
+    max-width: 80%;
+    float: left;
+    background-color: black;
+    color: white;
+    padding: 40px 55px;
+    max-width: 750px;
+    font-weight: bold;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 30px;
+    letter-spacing: 0.04em;
+  }
+
 #speechbubble::after {
     content: '';
     position: absolute;
@@ -13,32 +97,91 @@
     margin-left: -10px;
 }
 
-#descriptioncontainer {
-    background-image: url('src/components/description/verycoolbackground.png');
-    background-size: unset;
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    width: 50%;
+#descriptionlistcontainer {
+    margin-bottom: 4px;
+    padding-top: 8px;
+    padding-inline-start: 32px;
 }
 
-  .anArea {
-    width: 100%;
-  }
-  .eye {
-    position: relative;
+.dot {
+    width: 16px;
+    margin-right: 8px;
+}
+
+.descriptionlist {
+    list-style-type: none;
+    font-family: 'Fjalla One', sans-serif;
+    color: #333;
+    font-size: 18px;
+    padding-top: 6px;
+    text-align: left;
+}
+
+
+#onesizefitsall {
+    font-family: 'Fjalla One', sans-serif;
+    color: #ff00ff;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+#quantity {
+    width: 24px;
+    height: 30px;
+    text-align: center;
+    font-size: 22px;
+    border: 1px solid lightgray;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.qtyBtn {
+    width: 34px;
+    height: 32px;
+    font-size: 20px;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-right: 1px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#showsize {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 24px;
+    letter-spacing: 0.02rem;
+    margin-right: 50px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #333;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+}
+
+#addtocart {
     display: inline-block;
-    border-radius: 50%;
-    height: 20px;
-    width: 8px;
-    background: transparent;
-  }
-  .eye:after { /*pupil*/
-    position: absolute;
-    bottom: 17px;
-    right: 10px;
-    width: 10px;
-    height: 10px;
-    background: white;
-    border-radius: 50%;
-    content: " ";
-  }
+    font-family: 'Fjalla One', sans-serif;
+    background-color: black;
+    color: white;
+    width: 300px;
+    height: 40px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 15px;
+    border-radius: 6px;
+}
+
+#sizeitemname {
+    font-family: 'Fjalla One', sans-serif;
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 2px;
+    margin-left: 50px;
+    color: #333;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    transition: visibility 2s ease-in, opacity 0.3s linear, top .3s ease-in;
+}
+
+
