@@ -30,7 +30,7 @@ const Colors = ({ parsedData }) => {
             </div>
             <Quantity Quantity={Quantity} style={{ marginRight: '20px' }} />
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', paddingTop: '4px'}}>
+        <div style={{ display: 'flex', flexDirection: 'column', paddingTop: ''}}>
                 <div id="colors" style={{ display: 'flex', flexDirection: 'row', paddingBottom: '24px' }}>
                     {parsedData.map((item, index) => (
                         <div key={index}>
@@ -50,6 +50,7 @@ const Colors = ({ parsedData }) => {
                                             boxSizing: 'border-box',
                                             borderRadius: '4px',
                                             borderColor: selectedColorKey === colorKey ? 'red' : 'white',
+                                            cursor: 'pointer'
                                         }}
                                         onClick={() => handleColorClick(colorKey, colorValue)} // Handle click event
                                     ></button>

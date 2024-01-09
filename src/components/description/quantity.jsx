@@ -15,7 +15,7 @@ const Quantity = () => {
 
     return (
         <div className="qtyField" title="Quantity" style={{ display: 'flex', alignItems: 'center' }}>
-            <button className="qtyBtn minus" onClick={decreaseQuantity} style={{width: '34px', height: '32px', fontSize: '20px', backgroundColor: 'white', borderColor: 'lightgray', borderRight:'white', borderRadius: '4px'}}>
+            <button className="qtyBtn minus" onClick={decreaseQuantity}>
                 <i className="ad ad-minus-r" aria-hidden="true"></i> -
             </button>
             <input
@@ -25,9 +25,8 @@ const Quantity = () => {
                 value={quantity}
                 className="product-form__input qty"
                 readOnly
-                style={{width: "24px", height: '30px', textAlign: 'center', fontSize: '22px', textAlign: 'center', border: '1px solid #ddddddd', fontFamily: 'Fjalla One, sans-serif'}}
             />
-            <button className="qtyBtn plus" onClick={increaseQuantity} style={{width: '34px', height: '32px', fontSize: '20px', backgroundColor:'white', borderColor: 'white', borderLeft: 'white', borderTop: 'lightgray', borderRadius:'4px', }}>
+            <button className="qtyBtn plus" onClick={increaseQuantity}>
                 <i className="ad ad-plus-r" aria-hidden="true"></i> +
             </button>
         </div>
