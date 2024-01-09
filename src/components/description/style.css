@@ -1,0 +1,44 @@
+#speechbubble::after {
+    content: '';
+    position: absolute;
+    left: 1px;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-right-color: #000;
+    border-left: 0;
+    border-bottom: 0;
+    margin-top: -10px;
+    margin-left: -10px;
+}
+
+#descriptioncontainer {
+    background-image: url('src/components/description/verycoolbackground.png');
+    background-size: unset;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    width: 50%;
+}
+
+  .anArea {
+    width: 100%;
+  }
+  .eye {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    height: 20px;
+    width: 8px;
+    background: transparent;
+  }
+  .eye:after { /*pupil*/
+    position: absolute;
+    bottom: 17px;
+    right: 10px;
+    width: 10px;
+    height: 10px;
+    background: white;
+    border-radius: 50%;
+    content: " ";
+  }

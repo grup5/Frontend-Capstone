@@ -5,8 +5,10 @@ import { RelatedProduct, RecommenedProduct } from "./product.js"
 const app = express()
 const port = process.env.PORT || 3000
 
+//If you are running this from the build in a deployed environment remove this
 app.use(cors());
 app.use(express.json())
+app.use(express.static("dist"));
 //See the documentation in the product.js file for how to properly use the RelatedProduct and RecommenedProduct classes
 //These are used to create object to display the proper information for the carousels.
 //Related Products
