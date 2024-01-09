@@ -55,3 +55,9 @@ Start the server
 - [@Michael Heeter](https://github.com/Michael-Heeter)
 - [@Nathan Lui](https://github.com/nateykliu)
 - [@Zoilan Bondoc](https://github.com/ZenBond)
+
+//intro section Tech stack Roles (who is what) pass off to next person
+//Walk through of the app, how it works features
+//Specific pieces and what each person worked on obsticle/overcome by team
+//Config of your project, what we deployed to, project management system
+//Outro Same as intro
